@@ -29,14 +29,13 @@ MainWindow::MainWindow(QWidget* parent) :
     connect(ui.generateRemovedImgBtn, &QPushButton::clicked, this, &MainWindow::onGenerateRemovedImageButtonClicked);
 
     connect(workTh_, &QThread::finished, this, &MainWindow::onGenerateFinished);
-
-    QFile(tempFilePath1()).remove();
-    QFile(tempFilePath2()).remove();
 }
 
 MainWindow::~MainWindow()
 {
     workTh_->exit();
+    QFile(tempFilePath1()).remove();
+    QFile(tempFilePath2()).remove();
 }
 
 double MainWindow::lightEnchancePercent() const
