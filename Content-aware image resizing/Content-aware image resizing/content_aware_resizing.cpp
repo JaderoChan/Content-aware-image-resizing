@@ -20,7 +20,7 @@ cv::Mat makeEnergyImage(const cv::Mat& img)
             double energy = computePointEnergy(img, cv::Point(col, row),
                                                globalCcsMethod(), globalIsAllDirectForEnergy());
             maxEnergy = maxEnergy > energy ? maxEnergy : energy;
-            energyImg.at<double>(cv::Point(col, row)) = energy;
+            energyImg.at<double>(row, col) = energy;
         }
     }
 
@@ -54,7 +54,7 @@ cv::Mat removeMinimumEnergyCloumn(const cv::Mat& img)
                 dpTrack.at<signed char>(row, col) = med.second;
             }
 
-            dpEnergy.at<double>(cv::Point(col, row)) = energy;
+            dpEnergy.at<double>(row, col) = energy;
 
             if (row == img.rows - 1)
             {

@@ -37,15 +37,13 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
 
     auto& centerColor = img.at<cv::Vec3d>(point);
     cv::Point pt;
-    cv::Vec3d clr;
     if (isAllDirection)
     {
         // Left top.
         pt = cv::Point(point.x - 1, point.y - 1);
         if (!isOverEdge(img, pt))
         {
-            clr = img.at<cv::Vec3d>(pt);
-            energy += computeColorSimilarity(centerColor, clr, ccsMethod);
+            energy += computeColorSimilarity(centerColor, img.at<cv::Vec3d>(pt), ccsMethod);
             ++count;
         }
 
@@ -53,8 +51,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
         pt = cv::Point(point.x + 1, point.y - 1);
         if (!isOverEdge(img, pt))
         {
-            clr = img.at<cv::Vec3d>(pt);
-            energy += computeColorSimilarity(centerColor, clr, ccsMethod);
+            energy += computeColorSimilarity(centerColor, img.at<cv::Vec3d>(pt), ccsMethod);
             ++count;
         }
 
@@ -62,8 +59,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
         pt = cv::Point(point.x + 1, point.y + 1);
         if (!isOverEdge(img, pt))
         {
-            clr = img.at<cv::Vec3d>(pt);
-            energy += computeColorSimilarity(centerColor, clr, ccsMethod);
+            energy += computeColorSimilarity(centerColor, img.at<cv::Vec3d>(pt), ccsMethod);
             ++count;
         }
 
@@ -71,8 +67,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
         pt = cv::Point(point.x - 1, point.y + 1);
         if (!isOverEdge(img, pt))
         {
-            clr = img.at<cv::Vec3d>(pt);
-            energy += computeColorSimilarity(centerColor, clr, ccsMethod);
+            energy += computeColorSimilarity(centerColor, img.at<cv::Vec3d>(pt), ccsMethod);
             ++count;
         }
     }
@@ -81,8 +76,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
     pt = cv::Point(point.x - 1, point.y);
     if (!isOverEdge(img, pt))
     {
-        clr = img.at<cv::Vec3d>(pt);
-        energy += computeColorSimilarity(centerColor, clr, ccsMethod);
+        energy += computeColorSimilarity(centerColor, img.at<cv::Vec3d>(pt), ccsMethod);
         ++count;
     }
 
@@ -90,8 +84,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
     pt = cv::Point(point.x, point.y - 1);
     if (!isOverEdge(img, pt))
     {
-        clr = img.at<cv::Vec3d>(pt);
-        energy += computeColorSimilarity(centerColor, clr, ccsMethod);
+        energy += computeColorSimilarity(centerColor, img.at<cv::Vec3d>(pt), ccsMethod);
         ++count;
     }
 
@@ -99,8 +92,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
     pt = cv::Point(point.x + 1, point.y);
     if (!isOverEdge(img, pt))
     {
-        clr = img.at<cv::Vec3d>(pt);
-        energy += computeColorSimilarity(centerColor, clr, ccsMethod);
+        energy += computeColorSimilarity(centerColor, img.at<cv::Vec3d>(pt), ccsMethod);
         ++count;
     }
 
@@ -108,8 +100,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
     pt = cv::Point(point.x, point.y - 1);
     if (!isOverEdge(img, pt))
     {
-        clr = img.at<cv::Vec3d>(pt);
-        energy += computeColorSimilarity(centerColor, clr, ccsMethod);
+        energy += computeColorSimilarity(centerColor, img.at<cv::Vec3d>(pt), ccsMethod);
         ++count;
     }
 
