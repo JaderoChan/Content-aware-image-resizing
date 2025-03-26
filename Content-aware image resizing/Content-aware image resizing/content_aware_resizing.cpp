@@ -35,21 +35,28 @@ cv::Mat removeMinimumEnergyCloumn(const cv::Mat& img)
     if (img.rows <= 1)
         return cv::Mat();
 
-    cv::Mat energyImg = makeEnergyImage(img);
-    cv::Mat track = cv::Mat(energyImg.rows, energyImg.cols, CV_8SC1, cv::Scalar(0));
+    cv::Mat dpEnergy = cv::Mat(img.rows, img.cols, CV_64FC1, cv::Scalar(0.0));
+    cv::Mat dpTrack = cv::Mat(img.rows, img.cols, CV_8SC1, cv::Scalar(0));
 
+    // 计算每个点的能量值，并利用动态规划记录最小能量路径。
     double lastRowMinEnergy = DBL_MAX;
     int lastRowMinEnergyCol = 0;
-    for (int row = 1; row < energyImg.rows; ++row)
+    for (int row = 0; row < img.rows; ++row)
     {
-        for (int col = 0; col < energyImg.cols; ++col)
+        for (int col = 0; col < img.cols; ++col)
         {
-            auto med = minimalEnergyAndDirection(energyImg, cv::Point(col, row));
-            double& energy = energyImg.at<double>(row, col);
-            energy += med.first;
-            track.at<signed char>(row, col) = med.second;
+            double energy = computePointEnergy(img, cv::Point(col, row),
+                                               globalCcsMethod(), globalIsAllDirectForEnergy());
+            if (row != 0)
+            {
+                auto med = minimalEnergyAndDirection(dpEnergy, cv::Point(col, row));
+                energy += med.first;
+                dpTrack.at<signed char>(row, col) = med.second;
+            }
 
-            if (row == energyImg.rows - 1)
+            dpEnergy.at<double>(cv::Point(col, row)) = energy;
+
+            if (row == img.rows - 1)
             {
                 if (lastRowMinEnergy > energy)
                 {
@@ -60,6 +67,7 @@ cv::Mat removeMinimumEnergyCloumn(const cv::Mat& img)
         }
     }
 
+    // 重建图像。
     int needSkipCol = lastRowMinEnergyCol;
     int cursor = 0;
     cv::Mat rtn(img.rows, img.cols - 1, img.type());
@@ -76,7 +84,7 @@ cv::Mat removeMinimumEnergyCloumn(const cv::Mat& img)
             }
         }
 
-        needSkipCol = needSkipCol + track.at<signed char>(row, needSkipCol);
+        needSkipCol = needSkipCol + dpTrack.at<signed char>(row, needSkipCol);
     }
 
     return rtn;
