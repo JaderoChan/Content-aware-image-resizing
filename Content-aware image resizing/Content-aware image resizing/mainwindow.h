@@ -25,6 +25,8 @@ public:
     void startLoading();
     void endLoading();
 
+    void showAlert();
+
 protected slots:
     void onOpenImageButtonClicked();
     void onSaveImageButtonClicked();
