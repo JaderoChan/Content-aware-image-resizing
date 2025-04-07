@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 
+#include <qapplication.h>
 #include <qdatetime.h>
 #include <qdir.h>
 #include <qfiledialog.h>
@@ -89,6 +90,11 @@ void MainWindow::endLoading()
     ui.elapsedTimeLbl->setNum(static_cast<int>(elapsedSec));
 }
 
+void MainWindow::showAlert()
+{
+    qApp->alert(this);
+}
+
 void MainWindow::onOpenImageButtonClicked()
 {
     if (defaultDir_.isEmpty())
@@ -168,6 +174,7 @@ void MainWindow::onGenerateRemovedImageButtonClicked()
 void MainWindow::onGenerateFinished()
 {
     endLoading();
+    showAlert();
     ui.generateWgt->setEnabled(true);
     setDestinationImageByFile(tempFilePath1());
 }
