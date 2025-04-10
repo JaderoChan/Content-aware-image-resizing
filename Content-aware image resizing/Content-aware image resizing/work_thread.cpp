@@ -3,8 +3,6 @@
 #include "image_rw.hpp"
 #include "temp_file_path.h"
 
-#include <qdebug.h>
-
 WorkThread::WorkThread(QObject* parent) :
     QThread(parent)
 {}
