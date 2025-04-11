@@ -64,7 +64,7 @@ void MainWindow::setDestinationImageByFile(const QString& dstImgPath)
     if (pixmap.load(tempFilePath1()))
     {
         auto img = loadImage(dstImgPath.toLocal8Bit().toStdString());
-        img = lightnessEnhance(img, lightEnchancePercent());
+        img = enhanceLightness(img, lightEnchancePercent());
         saveImage(img, tempFilePath2().toLocal8Bit().toStdString());
 
         if (pixmap.load(tempFilePath2()))
