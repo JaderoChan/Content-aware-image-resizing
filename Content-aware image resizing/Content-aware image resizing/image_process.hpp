@@ -7,4 +7,4 @@
 cv::Mat lightnessEnhance(const cv::Mat& img, double multiple);
 
 /// @brief 将图像缩放在指定大小内，且保留长宽比。
-cv::Mat limitedSize(const cv::Mat& img, int maxWidth, int maxHeight);
+cv::Mat limitSize(const cv::Mat& img, int maxWidth, int maxHeight);
