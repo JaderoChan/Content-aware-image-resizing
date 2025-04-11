@@ -5,7 +5,7 @@ cv::Mat lightnessEnhance(const cv::Mat& img, double multiple)
     return img * multiple;
 }
 
-cv::Mat limitedSize(const cv::Mat& img, int maxWidth, int maxHeight)
+cv::Mat limitSize(const cv::Mat& img, int maxWidth, int maxHeight)
 {
     // 原图像宽高。
     int oWidth = img.cols;
