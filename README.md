@@ -8,6 +8,7 @@
 
 ## 开发环境
 
+- Visual Studio 2022
 - C++14
 - Qt 6.4.3
 - OpenCV 4.8.0
