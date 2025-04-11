@@ -2,7 +2,7 @@
 
 [English](README_EN.md)
 
-[文章地址](https://avikdas.com/2019/05/14/real-world-dynamic-programming-seam-carving.html)
+[相关链接](https://avikdas.com/2019/05/14/real-world-dynamic-programming-seam-carving.html)
 
 使用C++、Qt、OpenCV实现。
 
