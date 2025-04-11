@@ -1,10 +1,13 @@
-#include "mainwindow.h"
+#include <qapplication.h>
 
-#include <QtWidgets/QApplication>
+#include "mainwindow.h"
+#include "translate.h"
 
 int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
+
+    setLanguage(currentLanguage());
 
     MainWindow w;
     w.show();

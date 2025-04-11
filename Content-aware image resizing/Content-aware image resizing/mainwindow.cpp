@@ -11,6 +11,7 @@
 #include "image_rw.hpp"
 #include "parameter_pack.hpp"
 #include "temp_file_path.h"
+#include "translate.h"
 
 MainWindow::MainWindow(QWidget* parent) :
     QWidget(parent), loading_(new QMovie(":/resource/image/loading.gif")), workTh_(new WorkThread())
@@ -22,6 +23,7 @@ MainWindow::MainWindow(QWidget* parent) :
     ui.srcImgLbl->installEventFilter(this);
     ui.dstImgLbl->installEventFilter(this);
 
+    connect(ui.toggleLanguageBtn, &QPushButton::clicked, this, &MainWindow::onToggleLanguageButtonClicked);
     connect(ui.openSrcBtn, &QPushButton::clicked, this, &MainWindow::onOpenImageButtonClicked);
     connect(ui.saveDstBtn, &QPushButton::clicked, this, &MainWindow::onSaveImageButtonClicked);
     connect(ui.lightnessSldr, &QSlider::valueChanged, this, &MainWindow::onLightnessSliderChanged);
@@ -93,6 +95,21 @@ void MainWindow::endLoading()
 void MainWindow::showAlert()
 {
     qApp->alert(this);
+}
+
+void MainWindow::onToggleLanguageButtonClicked()
+{
+    switch (currentLanguage())
+    {
+        case LANG_EN_US:
+            setLanguage(LANG_ZH_CN);
+            break;
+        case LANG_ZH_CN:
+            setLanguage(LANG_EN_US);
+            break;
+        default:
+            break;
+    }
 }
 
 void MainWindow::onOpenImageButtonClicked()
@@ -177,6 +194,16 @@ void MainWindow::onGenerateFinished()
     showAlert();
     ui.generateWgt->setEnabled(true);
     setDestinationImageByFile(tempFilePath1());
+}
+
+void MainWindow::changeEvent(QEvent* event)
+{
+    if (event->type() == QEvent::Type::LanguageChange)
+    {
+        ui.retranslateUi(this);
+    }
+
+    QWidget::changeEvent(event);
 }
 
 bool MainWindow::eventFilter(QObject* watched, QEvent* event)

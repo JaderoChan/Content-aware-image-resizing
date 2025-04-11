@@ -70,6 +70,9 @@
     <ClCompile Include="parameter_pack.cpp">
       <Filter>Image Process\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="translate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="content_aware_resizing.hpp">
@@ -90,10 +93,21 @@
     <ClInclude Include="parameter_pack.hpp">
       <Filter>Image Process\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="translate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="work_thread.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtTranslation Include="translation\en_US.ts">
+      <Filter>Translation Files</Filter>
+    </QtTranslation>
+    <QtTranslation Include="translation\zh_CN.ts">
+      <Filter>Translation Files</Filter>
+    </QtTranslation>
   </ItemGroup>
 </Project>

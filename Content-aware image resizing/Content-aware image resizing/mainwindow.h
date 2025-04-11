@@ -28,6 +28,7 @@ public:
     void showAlert();
 
 protected slots:
+    void onToggleLanguageButtonClicked();
     void onOpenImageButtonClicked();
     void onSaveImageButtonClicked();
     void onLightnessSliderChanged(int value);
@@ -37,6 +38,7 @@ protected slots:
     void onGenerateFinished();
 
 protected:
+    void changeEvent(QEvent* event) override;
     bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:

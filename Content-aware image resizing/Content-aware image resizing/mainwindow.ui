@@ -13,13 +13,48 @@
   <property name="windowTitle">
    <string>Content-aware image resizing</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_4" stretch="5,0,0">
+  <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,5,0,0">
    <property name="spacing">
     <number>0</number>
    </property>
    <item>
+    <widget class="QWidget" name="widget_11" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="toggleLanguageBtn">
+        <property name="text">
+         <string>Toggle Language</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>720</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
     <widget class="QWidget" name="widget_3" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout" stretch="5,0,5">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QWidget" name="widget" native="true">
         <layout class="QVBoxLayout" name="verticalLayout" stretch="0,10,0">
@@ -61,7 +96,7 @@
          <item>
           <widget class="QPushButton" name="openSrcBtn">
            <property name="text">
-            <string>打开</string>
+            <string>Open The Image</string>
            </property>
           </widget>
          </item>
@@ -211,7 +246,7 @@
             <item>
              <widget class="QLabel" name="label_2">
               <property name="text">
-               <string>耗时：</string>
+               <string>Elapsed:</string>
               </property>
              </widget>
             </item>
@@ -224,7 +259,7 @@
                </size>
               </property>
               <property name="text">
-               <string>0</string>
+               <string notr="true">0</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -234,7 +269,7 @@
             <item>
              <widget class="QLabel" name="label_9">
               <property name="text">
-               <string>秒</string>
+               <string>Sec</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -284,7 +319,7 @@
             <item>
              <widget class="QLabel" name="label_4">
               <property name="text">
-               <string>亮度增强</string>
+               <string>Enhance Lightness</string>
               </property>
              </widget>
             </item>
@@ -307,7 +342,7 @@
                </size>
               </property>
               <property name="text">
-               <string>0</string>
+               <string notr="true">0</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -317,7 +352,7 @@
             <item>
              <widget class="QLabel" name="label_7">
               <property name="text">
-               <string>%</string>
+               <string notr="true">%</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -330,7 +365,7 @@
          <item>
           <widget class="QPushButton" name="saveDstBtn">
            <property name="text">
-            <string>保存</string>
+            <string>Save The Image</string>
            </property>
           </widget>
          </item>
@@ -380,7 +415,7 @@
             <item>
              <widget class="QLabel" name="label_5">
               <property name="text">
-               <string>颜色相似度计算方式</string>
+               <string>Color similarity calculation method:</string>
               </property>
              </widget>
             </item>
@@ -405,7 +440,7 @@
                <item>
                 <widget class="QRadioButton" name="normalRdoBtn">
                  <property name="toolTip">
-                  <string>颜色空间距离平方值</string>
+                  <string>Color space distance squared value.</string>
                  </property>
                  <property name="text">
                   <string>Normal</string>
@@ -418,7 +453,7 @@
                <item>
                 <widget class="QRadioButton" name="mod1RdoBtn">
                  <property name="toolTip">
-                  <string>根据人眼对三原色的敏感度进行加权修正1</string>
+                  <string>Weighted correction based on the sensitivity of the human eye to the three primary colors 1.</string>
                  </property>
                  <property name="text">
                   <string>Modified 1</string>
@@ -428,10 +463,10 @@
                <item>
                 <widget class="QRadioButton" name="mod2RdoBtn">
                  <property name="toolTip">
-                  <string>根据人眼对三原色的敏感度进行加权修正2</string>
+                  <string>Weighted correction based on the sensitivity of the human eye to the three primary colors 2.</string>
                  </property>
                  <property name="text">
-                  <string>Modified 2</string>
+                  <string>Modified 2 </string>
                  </property>
                 </widget>
                </item>
@@ -462,7 +497,7 @@
             <item>
              <widget class="QLabel" name="label_6">
               <property name="text">
-               <string>计算点能量时是否包含对角点：</string>
+               <string>Include diagonal points when calculating point energy:</string>
               </property>
              </widget>
             </item>
@@ -487,7 +522,7 @@
                <item>
                 <widget class="QRadioButton" name="trueRdoBtn">
                  <property name="text">
-                  <string>是</string>
+                  <string>Yes</string>
                  </property>
                  <property name="checked">
                   <bool>false</bool>
@@ -497,7 +532,7 @@
                <item>
                 <widget class="QRadioButton" name="falseRdoBtn">
                  <property name="text">
-                  <string>否</string>
+                  <string>No</string>
                  </property>
                  <property name="checked">
                   <bool>true</bool>
@@ -558,7 +593,7 @@
                <item>
                 <widget class="QLabel" name="label">
                  <property name="text">
-                  <string>移除列数：</string>
+                  <string>The column count of be removed:</string>
                  </property>
                 </widget>
                </item>
@@ -608,7 +643,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>-</string>
+                     <string notr="true">-</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
@@ -639,14 +674,14 @@
                <item>
                 <widget class="QPushButton" name="generateEnergyImgBtn">
                  <property name="text">
-                  <string>生成能量图</string>
+                  <string>Generate Energy Image</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QPushButton" name="generateRemovedImgBtn">
                  <property name="text">
-                  <string>生成</string>
+                  <string>Generate Scaled Image</string>
                  </property>
                 </widget>
                </item>

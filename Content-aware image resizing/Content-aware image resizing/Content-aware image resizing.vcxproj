@@ -55,8 +55,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -89,6 +91,7 @@
     <ClCompile Include="image_rw.cpp" />
     <ClCompile Include="parameter_pack.cpp" />
     <ClCompile Include="temp_file_path.cpp" />
+    <ClCompile Include="translate.cpp" />
     <ClCompile Include="work_thread.cpp" />
     <QtRcc Include="mainwindow.qrc" />
     <QtUic Include="mainwindow.ui" />
@@ -103,7 +106,12 @@
     <ClInclude Include="image_rw.hpp" />
     <ClInclude Include="parameter_pack.hpp" />
     <ClInclude Include="temp_file_path.h" />
+    <ClInclude Include="translate.h" />
     <QtMoc Include="work_thread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtTranslation Include="translation\en_US.ts" />
+    <QtTranslation Include="translation\zh_CN.ts" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
