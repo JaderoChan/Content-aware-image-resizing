@@ -39,7 +39,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
     cv::Point pt;
     if (isAllDirection)
     {
-        // Left top.
+        // 左上。
         pt = cv::Point(point.x - 1, point.y - 1);
         if (!isOverEdge(img, pt))
         {
@@ -47,7 +47,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
             ++count;
         }
 
-        // Right top.
+        // 右上。
         pt = cv::Point(point.x + 1, point.y - 1);
         if (!isOverEdge(img, pt))
         {
@@ -55,7 +55,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
             ++count;
         }
 
-        // Right bottom.
+        // 右下。
         pt = cv::Point(point.x + 1, point.y + 1);
         if (!isOverEdge(img, pt))
         {
@@ -63,7 +63,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
             ++count;
         }
 
-        // Left bottom.
+        // 左下。
         pt = cv::Point(point.x - 1, point.y + 1);
         if (!isOverEdge(img, pt))
         {
@@ -72,7 +72,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
         }
     }
 
-    // Left
+    // 左。
     pt = cv::Point(point.x - 1, point.y);
     if (!isOverEdge(img, pt))
     {
@@ -80,7 +80,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
         ++count;
     }
 
-    // Top.
+    // 上。
     pt = cv::Point(point.x, point.y - 1);
     if (!isOverEdge(img, pt))
     {
@@ -88,7 +88,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
         ++count;
     }
 
-    // Right.
+    // 右。
     pt = cv::Point(point.x + 1, point.y);
     if (!isOverEdge(img, pt))
     {
@@ -96,7 +96,7 @@ double computePointEnergy(const cv::Mat& img, const cv::Point& point,
         ++count;
     }
 
-    // Bottom.
+    // 下。
     pt = cv::Point(point.x, point.y - 1);
     if (!isOverEdge(img, pt))
     {
