@@ -1,6 +1,6 @@
 #include "image_process.hpp"
 
-cv::Mat lightnessEnhance(const cv::Mat& img, double multiple)
+cv::Mat enhanceLightness(const cv::Mat& img, double multiple)
 {
     return img * multiple;
 }
