@@ -185,7 +185,7 @@ bool MainWindow::eventFilter(QObject* watched, QEvent* event)
     {
         switch (event->type())
         {
-            // Resize the display image to fit the label when the label is reszing.
+            // 当QLabel接收到Resize事件时，更改显示图片的大小以适应QLabel。
             case QEvent::Type::Resize:
             {
                 if (watched == ui.srcImgLbl)
@@ -195,10 +195,6 @@ bool MainWindow::eventFilter(QObject* watched, QEvent* event)
                 else if (watched == ui.dstImgLbl)
                 {
                     setDestinationImageByFile(tempFilePath1());
-                }
-                else
-                {
-                    // Pass.
                 }
 
                 break;
