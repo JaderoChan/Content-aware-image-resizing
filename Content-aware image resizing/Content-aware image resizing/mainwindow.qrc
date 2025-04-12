@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>resource/image/right_arrow.png</file>
         <file>resource/image/loading.gif</file>
+        <file>lang/en_US.qm</file>
+        <file>lang/zh_CN.qm</file>
     </qresource>
 </RCC>

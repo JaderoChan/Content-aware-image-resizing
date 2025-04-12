@@ -4,8 +4,8 @@
 #include <qdebug.h>
 #include <qtranslator.h>
 
-constexpr const char* LANGUAGE_EN_US_PATH = "./lang/en_US.qm";
-constexpr const char* LANGUAGE_ZH_CN_PATH = "./lang/zh_CN.qm";
+constexpr const char* LANGUAGE_EN_US_PATH = ":/lang/en_US.qm";
+constexpr const char* LANGUAGE_ZH_CN_PATH = ":/lang/zh_CN.qm";
 
 static Language CurrentLanguage = LANG_EN_US;
 
