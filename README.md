@@ -1,6 +1,6 @@
 # Content-aware-image-resizing 内容敏感的图像缩小
 
-[English](README_EN.md)
+**简体中文 | [English](README_EN.md)**
 
 [相关链接](https://avikdas.com/2019/05/14/real-world-dynamic-programming-seam-carving.html)
 

@@ -1,5 +1,7 @@
 # Content-aware-image-resizing
 
+**[简体中文](README.md) | English**
+
 [Related URL](https://avikdas.com/2019/05/14/real-world-dynamic-programming-seam-carving.html)
 
 Implementation using C++, Qt and OpenCV.
