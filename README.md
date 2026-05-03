@@ -2,7 +2,7 @@
 
 **简体中文 | [English](README_EN.md)**
 
-见优化后的新项目[ContentAwareImageCrop](https://github.com/JaderoChan/ContentAwareImageCrop)
+见优化后的新项目 [ContentAwareImageCrop](https://github.com/JaderoChan/ContentAwareImageCrop)
 
 [相关链接](https://avikdas.com/2019/05/14/real-world-dynamic-programming-seam-carving.html)
 
