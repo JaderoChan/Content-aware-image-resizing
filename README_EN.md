@@ -2,6 +2,8 @@
 
 **[简体中文](README.md) | English**
 
+See the optimized new project [ContentAwareImageCrop](https://github.com/JaderoChan/ContentAwareImageCrop)
+
 [Related URL](https://avikdas.com/2019/05/14/real-world-dynamic-programming-seam-carving.html)
 
 Implementation using C++, Qt and OpenCV.
